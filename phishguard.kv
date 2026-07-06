@@ -1,0 +1,203 @@
+ScreenManager:
+    HomeScreen:
+    EmailScreen:
+    SmsScreen:
+    LinkQrScreen:
+    CameraScreen:
+
+<HomeScreen>:
+    name: "home"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 24
+        spacing: 16
+
+        Label:
+            text: "PhishGuard Mobile"
+            font_size: 28
+            bold: True
+            size_hint_y: None
+            height: 60
+
+        Label:
+            text: "Offline phishing detector. Choose what to scan."
+            size_hint_y: None
+            height: 32
+
+        Button:
+            text: "Scan Email (.eml)"
+            size_hint_y: None
+            height: 64
+            on_release: app.root.current = "email"
+
+        Button:
+            text: "Scan SMS / Text Message"
+            size_hint_y: None
+            height: 64
+            on_release: app.root.current = "sms"
+
+        Button:
+            text: "Scan Link / QR Code"
+            size_hint_y: None
+            height: 64
+            on_release: app.root.current = "linkqr"
+
+        Widget:
+
+<EmailScreen>:
+    name: "email"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 16
+        spacing: 8
+
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            Button:
+                text: "< Back"
+                size_hint_x: None
+                width: 100
+                on_release: app.root.current = "home"
+            Label:
+                text: "Scan Email"
+                bold: True
+
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            spacing: 8
+            Button:
+                text: "Choose .eml file"
+                on_release: root.choose_file()
+            Button:
+                text: "Analyze"
+                on_release: root.analyze()
+
+        TextInput:
+            id: eml_input
+            hint_text: "Paste raw .eml source here, or choose a file above..."
+            size_hint_y: 0.35
+
+        ScrollView:
+            BoxLayout:
+                id: results_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 6
+                padding: 4
+
+<SmsScreen>:
+    name: "sms"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 16
+        spacing: 8
+
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            Button:
+                text: "< Back"
+                size_hint_x: None
+                width: 100
+                on_release: app.root.current = "home"
+            Label:
+                text: "Scan SMS"
+                bold: True
+
+        TextInput:
+            id: sms_sender
+            hint_text: "Sender ID or phone number (e.g. PayPal, +1 555 0100)"
+            multiline: False
+            size_hint_y: None
+            height: 48
+
+        TextInput:
+            id: sms_body
+            hint_text: "Paste the message text here..."
+            size_hint_y: 0.3
+
+        Button:
+            text: "Analyze"
+            size_hint_y: None
+            height: 48
+            on_release: root.analyze()
+
+        ScrollView:
+            BoxLayout:
+                id: results_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 6
+                padding: 4
+
+<LinkQrScreen>:
+    name: "linkqr"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 16
+        spacing: 8
+
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            Button:
+                text: "< Back"
+                size_hint_x: None
+                width: 100
+                on_release: app.root.current = "home"
+            Label:
+                text: "Scan Link / QR"
+                bold: True
+
+        TextInput:
+            id: url_input
+            hint_text: "Paste a link here..."
+            multiline: False
+            size_hint_y: None
+            height: 48
+
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            spacing: 8
+            Button:
+                text: "Analyze Link"
+                on_release: root.analyze_url()
+            Button:
+                text: "Scan QR (camera)"
+                on_release: root.open_camera()
+            Button:
+                text: "QR from image"
+                on_release: root.choose_image()
+
+        ScrollView:
+            BoxLayout:
+                id: results_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 6
+                padding: 4
+
+<CameraScreen>:
+    name: "camera"
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            id: camera_container
+            orientation: "vertical"
+
+        BoxLayout:
+            size_hint_y: None
+            height: 56
+            Button:
+                text: "Capture & Analyze"
+                on_release: root.capture()
+            Button:
+                text: "Cancel"
+                on_release: root._go_back()

@@ -1,0 +1,43 @@
+From: "PayPal Security" <service@paypa1-support.com>
+Reply-To: recover@totally-legit-mail.ru
+Return-Path: <bounce@totally-legit-mail.ru>
+To: victim@example.com
+Subject: URGENT: Your account will be suspended - verify your account now!!!
+Date: Mon, 1 Jun 2026 09:15:00 -0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="OUTER_BOUNDARY"
+
+--OUTER_BOUNDARY
+Content-Type: multipart/alternative; boundary="INNER_BOUNDARY"
+
+--INNER_BOUNDARY
+Content-Type: text/plain; charset="utf-8"
+
+Dear Customer,
+
+We detected unusual activity on your account. You must verify your account
+within 24 hours or your account will be suspended. Click here immediately:
+https://bit.ly/3xPayVerify
+
+PayPal Security Team
+
+--INNER_BOUNDARY
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Dear Customer,</p>
+<p>We detected unusual activity on your account. You must verify your account
+within 24 hours or your account will be suspended.</p>
+<p><a href="http://185.23.44.10/secure/verify-login.php">https://www.paypal.com/verify</a></p>
+<p>PayPal Security Team</p>
+</body></html>
+
+--INNER_BOUNDARY--
+--OUTER_BOUNDARY
+Content-Type: application/octet-stream; name="invoice.pdf.exe"
+Content-Disposition: attachment; filename="invoice.pdf.exe"
+Content-Transfer-Encoding: base64
+
+VGhpcyBpcyBub3QgYSByZWFsIGV4ZWN1dGFibGUsIGp1c3QgdGVzdCBmaXh0dXJlIGRhdGEu
+
+--OUTER_BOUNDARY--

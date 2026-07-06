@@ -1,0 +1,31 @@
+From: "GitHub" <notifications@github.com>
+Reply-To: notifications@github.com
+Return-Path: <notifications@github.com>
+To: developer@example.com
+Subject: Weekly digest: 3 repositories you starred were updated
+Date: Wed, 3 Jun 2026 08:00:00 -0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="INNER_BOUNDARY"
+
+--INNER_BOUNDARY
+Content-Type: text/plain; charset="utf-8"
+
+Hi there,
+
+Here's your weekly digest of activity on repositories you follow.
+View it online: https://github.com/notifications
+
+Thanks,
+The GitHub Team
+
+--INNER_BOUNDARY
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Hi there,</p>
+<p>Here's your weekly digest of activity on repositories you follow.</p>
+<p><a href="https://github.com/notifications">View it online</a></p>
+<p>Thanks,<br>The GitHub Team</p>
+</body></html>
+
+--INNER_BOUNDARY--

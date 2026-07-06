@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+exclude = [".buildozer", "bin"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+extend-exclude = "(\\.buildozer|bin)"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
